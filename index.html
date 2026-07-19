@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Partita - Casa Strippoli</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Schermata iniziale di finto caricamento */
+        #booking-site {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .btn-prenota {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Schermata dello scherzo (nascosta all'inizio) */
+        #prank-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
+
+        #prank-screen img {
+            max-height: 85vh;
+            max-width: 100%;
+            object-fit: contain;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+
+        .prank-text {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            font-family: 'Impact', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. LA FINTA PAGINA DI PRENOTAZIONE -->
+    <div id="booking-site">
+        <h2>Stadio Casa Strippoli 🏟️</h2>
+        <p><strong>Evento:</strong> Big Match di Stasera</p>
+        <p><strong>Orario:</strong> Ore 20:30</p>
+        <p><strong>Prezzo Posto a Sedere:</strong> €1.00</p>
+        <hr style="border: 0; border-top: 1px solid #eee;">
+        <p style="font-size: 14px; color: #666;">Posti rimasti: <strong>2</strong></p>
+        <button class="btn-prenota" onclick="attivaScherzo()">PRENOTA ORA A 1€</button>
+    </div>
+
+    <!-- 2. LA SCHERMATA DELLO SCHERZO -->
+    <div id="prank-screen">
+        <img src="foto-latte.png" alt="Scherzo">
+        <div class="prank-text">MA QUALE PARTITA! BEVITI IL LATTE! 🥛</div>
+    </div>
+
+    <script>
+        function attivaScherzo() {
+            document.getElementById('booking-site').style.display = 'none';
+            document.getElementById('prank-screen').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
